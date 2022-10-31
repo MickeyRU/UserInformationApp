@@ -49,9 +49,6 @@ extension PickerViewTableViewCell: GenderPickerViewProtocol {
         genderTextField.text = Resources.Gender.allCases[row].rawValue
         genderTextField.resignFirstResponder()
     }
-    
-    
-    
 }
 
 //MARK: - Set Constraints

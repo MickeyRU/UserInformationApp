@@ -1,45 +1,39 @@
 //
-//  EditingTableViewController.swift
+//  EditingTableView.swift
 //  UserInformationApp
 //
-//  Created by Павел Афанасьев on 17.10.2022.
+//  Created by Павел Афанасьев on 31.10.2022.
 //
 
 import UIKit
-
-class EditingTableViewController: UITableViewController {
+ 
+final class EditingTableView: UITableView  {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)
+
+        register(TextViewTableViewCell.self, forCellReuseIdentifier: TextViewTableViewCell.idTextViewTableViewCell)
+        register(DatePickerTableViewCell.self, forCellReuseIdentifier: DatePickerTableViewCell.idDatePickerTableViewCell)
+        register(PickerViewTableViewCell.self, forCellReuseIdentifier: PickerViewTableViewCell.idPickerViewTableViewCell)
         
-        setupViews()
+        delegate = self
+        dataSource = self
     }
     
-    private func setupViews() {
-        title = "Редактирование"
-        view.backgroundColor = .white
-        tableView.register(TextViewTableViewCell.self, forCellReuseIdentifier: TextViewTableViewCell.idTextViewTableViewCell)
-        tableView.register(DatePickerTableViewCell.self, forCellReuseIdentifier: DatePickerTableViewCell.idDatePickerTableViewCell)
-        tableView.register(PickerViewTableViewCell.self, forCellReuseIdentifier: PickerViewTableViewCell.idPickerViewTableViewCell)
-
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(editButtonTapped))
-    }
-    
-    @objc private func editButtonTapped() {
-        print("tap")
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
 //MARK: - UItableViewDataSource
 
-extension EditingTableViewController {
+extension EditingTableView: UITableViewDataSource {
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Resources.FieldsName.allCases.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // CaseIterable в перечислении позволяет обратиться по индексу строки к значениям перечисления
         let fieldName = Resources.FieldsName.allCases[indexPath.row].rawValue
@@ -70,18 +64,19 @@ extension EditingTableViewController {
 
 //MARK: - UItableViewDelegate
 
-extension EditingTableViewController {
+extension EditingTableView: UITableViewDelegate {
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         // Настраиваем размер второй ячейки - чтобы ячейка увеличивалась автоматически
         indexPath.row == 1 ? UITableView.automaticDimension : 44
     }
 }
 
-extension EditingTableViewController: NameTextViewProtocol {
+extension EditingTableView : NameTextViewProtocol {
     func changeSize() {
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        beginUpdates()
+        endUpdates()
     }
 }
+
 
