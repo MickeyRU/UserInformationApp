@@ -39,10 +39,18 @@ class PickerViewTableViewCell: UITableViewCell {
     }
     
     
-    func configure(_ name: String) {
+    func configure(_ name: String, value: String) {
         nameLabel.text = name
+        genderTextField.text = value
+    }
+    
+    public func getCellValue() -> String {
+        guard let text = genderTextField.text else { return "" }
+        return text
     }
 }
+
+//MARK: - GenderPickerViewProtocol
 
 extension PickerViewTableViewCell: GenderPickerViewProtocol {
     func didSelect(row: Int) {

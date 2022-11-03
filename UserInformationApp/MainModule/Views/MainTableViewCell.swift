@@ -40,8 +40,9 @@ class MainTableViewCell: UITableViewCell {
     }
     
     
-    func configure(_ name: String) {
+    func configure(name: String, value: String) {
         nameLabel.text = name
+        valueLabel.text = value == "" ? "Нет данных" : value
     }
 }
 

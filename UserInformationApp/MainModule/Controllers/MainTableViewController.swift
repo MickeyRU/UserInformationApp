@@ -21,7 +21,7 @@ final class MainTableViewController: UITableViewController {
     private func setupViews() {
         title = "Просмотр"
         view.backgroundColor = .white
-        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.idMainTableViewCell)
+        tableView.register(MainTableViewCell.self)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Редактировать", style: .plain, target: self, action: #selector(editButtonTapped))
     }
@@ -34,6 +34,23 @@ final class MainTableViewController: UITableViewController {
     private func getUserModel() {
         userModel = UserDefaultsManager.getUserModel()
     }
+    
+    private func saveEditModel(_ model: UserModel) {
+        UserDefaultsManager.saveUserValue(Resources.FieldsName.firstName.rawValue, model.firstName)
+        UserDefaultsManager.saveUserValue(Resources.FieldsName.secondName.rawValue, model.secondName)
+        UserDefaultsManager.saveUserValue(Resources.FieldsName.thirdName.rawValue, model.thirdName)
+        UserDefaultsManager.saveUserValue(Resources.FieldsName.birthDay.rawValue, model.birthsday)
+        UserDefaultsManager.saveUserValue(Resources.FieldsName.gender.rawValue, model.gender)
+    }
+    
+    public func changeUserModel(_ model: UserModel) {
+        // save model
+        saveEditModel(model)
+        
+        //update labels
+        userModel = model
+        tableView.reloadData()
+    }
 }
 
 //MARK: - UItableViewDataSource
@@ -44,13 +61,15 @@ extension MainTableViewController {
         return Resources.FieldsName.allCases.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.idMainTableViewCell, for: indexPath) as? MainTableViewCell else { return UITableViewCell()
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {        
+        guard let cell = tableView.dequeuReusableCell(MainTableViewCell.self) else {
+            return UITableViewCell()
         }
         
         // CaseIterable в перечислении позволяет обратиться по индексу строки к значениям перечисления
         let fieldName = Resources.FieldsName.allCases[indexPath.row].rawValue
-        cell.configure(fieldName)
+        let value = UserDefaultsManager.getUserValue(Resources.FieldsName.allCases[indexPath.row].rawValue)
+        cell.configure(name: fieldName, value: value)
         return cell
     }
 }

@@ -16,7 +16,7 @@ final class UserDefaultsManager {
         defaults.value(forKey: userSessionKey) as? [String : String] ?? [:]
     }
     
-    static func saveUserValeu(_ key: String, _ value: String) {
+    static func saveUserValue(_ key: String, _ value: String) {
         var userDictionary = getUserDictionary()
         userDictionary[key] = value
         defaults.set(userDictionary, forKey: userSessionKey)

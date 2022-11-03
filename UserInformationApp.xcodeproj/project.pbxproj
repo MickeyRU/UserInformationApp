@@ -19,6 +19,9 @@
 		BE078E54290FD8A9009964F1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE078E53290FD8A9009964F1 /* UserModel.swift */; };
 		BE078E57290FDE8C009964F1 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE078E56290FDE8C009964F1 /* UserDefaultsManager.swift */; };
 		BE078E59290FEA41009964F1 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE078E58290FEA41009964F1 /* UIViewController + Extensions.swift */; };
+		BE5C91BD2912F5EF00829500 /* UITableView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C91BC2912F5EF00829500 /* UITableView + Extension.swift */; };
+		BE5C91BF2913C86D00829500 /* Strings + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C91BE2913C86D00829500 /* Strings + Extensions.swift */; };
+		BE5C91C12913CF3C00829500 /* Date + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C91C02913CF3C00829500 /* Date + Extensions.swift */; };
 		BE6890F3290FEEED009F2BDE /* UIBarButtonItem + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6890F2290FEEED009F2BDE /* UIBarButtonItem + Extension.swift */; };
 		BE7887112906AAC70019BFAF /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7887102906AAC70019BFAF /* DatePickerTableViewCell.swift */; };
 		BE7887132906AFCC0019BFAF /* PickerViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7887122906AFCC0019BFAF /* PickerViewTableViewCell.swift */; };
@@ -43,6 +46,9 @@
 		BE078E53290FD8A9009964F1 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		BE078E56290FDE8C009964F1 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		BE078E58290FEA41009964F1 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
+		BE5C91BC2912F5EF00829500 /* UITableView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + Extension.swift"; sourceTree = "<group>"; };
+		BE5C91BE2913C86D00829500 /* Strings + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings + Extensions.swift"; sourceTree = "<group>"; };
+		BE5C91C02913CF3C00829500 /* Date + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extensions.swift"; sourceTree = "<group>"; };
 		BE6890F2290FEEED009F2BDE /* UIBarButtonItem + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem + Extension.swift"; sourceTree = "<group>"; };
 		BE7887102906AAC70019BFAF /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTableViewCell.swift; sourceTree = "<group>"; };
 		BE7887122906AFCC0019BFAF /* PickerViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewTableViewCell.swift; sourceTree = "<group>"; };
@@ -159,6 +165,9 @@
 				BE05E4B428FD681900954FA9 /* UIView + extensions.swift */,
 				BE078E58290FEA41009964F1 /* UIViewController + Extensions.swift */,
 				BE6890F2290FEEED009F2BDE /* UIBarButtonItem + Extension.swift */,
+				BE5C91BC2912F5EF00829500 /* UITableView + Extension.swift */,
+				BE5C91BE2913C86D00829500 /* Strings + Extensions.swift */,
+				BE5C91C02913CF3C00829500 /* Date + Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -289,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE05E4AE28FD5F2A00954FA9 /* Resources.swift in Sources */,
+				BE5C91BD2912F5EF00829500 /* UITableView + Extension.swift in Sources */,
 				BE05E49928FC40AC00954FA9 /* MainTableViewController.swift in Sources */,
 				BE05E4B928FD7B1E00954FA9 /* EditingViewController.swift in Sources */,
 				BE05E4B528FD681900954FA9 /* UIView + extensions.swift in Sources */,
@@ -298,9 +308,11 @@
 				BEC2B83B290698E800B6CFBD /* TextViewTableViewCell.swift in Sources */,
 				BE7887132906AFCC0019BFAF /* PickerViewTableViewCell.swift in Sources */,
 				BE078E54290FD8A9009964F1 /* UserModel.swift in Sources */,
+				BE5C91C12913CF3C00829500 /* Date + Extensions.swift in Sources */,
 				BEC2B83D290699F300B6CFBD /* NameTextView.swift in Sources */,
 				BE6890F3290FEEED009F2BDE /* UIBarButtonItem + Extension.swift in Sources */,
 				BE078E51290FD575009964F1 /* EditingTableView.swift in Sources */,
+				BE5C91BF2913C86D00829500 /* Strings + Extensions.swift in Sources */,
 				BE078E57290FDE8C009964F1 /* UserDefaultsManager.swift in Sources */,
 				BE05E49528FC40AC00954FA9 /* AppDelegate.swift in Sources */,
 				BE7887172907DC020019BFAF /* GenderTextField.swift in Sources */,

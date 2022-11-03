@@ -44,8 +44,13 @@ class DatePickerTableViewCell: UITableViewCell {
     }
     
     
-    func configure(_ name: String) {
+    func configure(_ name: String, date: Date) {
         nameLabel.text = name
+        datePicker.date = date
+    }
+    
+    public func getCellValue() -> String {
+        datePicker.date.getStringFromDate()
     }
 }
 
@@ -58,7 +63,6 @@ extension DatePickerTableViewCell {
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             nameLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.35),
-            
             datePicker.centerYAnchor.constraint(equalTo: centerYAnchor),
             datePicker.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5)
         ])

@@ -39,39 +39,58 @@ class EditingViewController: UIViewController {
         
         let backBarButtonItem = UIBarButtonItem.createCustomButton(vc: self, selector: #selector(backButtonTapped))
         navigationItem.leftBarButtonItem = backBarButtonItem
+        editingTableView.setUserModel(userModel)
         view.addViews(editingTableView)
-
+        
     }
-     
+    
     @objc private func saveTapped() {
-        if authFields() {
+        
+        let editUserModel = editingTableView.getUserModel()
+        print(editUserModel)
+        print(userModel)
+
+        if authFields(model: editUserModel) {
             presentSimpleAlert(title: "Выполнено", message: "Все обязательные поля заполнены")
         } else {
             presentSimpleAlert(title: "Ошибка", message: "Заполните поля: ФИО, дата рождения, пол")
         }
+        
     }
     
     @objc private func backButtonTapped() {
-        presentSaveAlert { value in
-            if value {
-                // model
-                self.navigationController?.popViewController(animated: true)
-            } else {
-                self.navigationController?.popViewController(animated: true) // возвращаемся назад
+        
+        let editUserModel = editingTableView.getUserModel()
+        
+        if editUserModel == userModel {
+            navigationController?.popViewController(animated: true) // возвращаемся назад
+        } else {
+            presentSaveAlert { [weak self] value in
+                guard let self = self else { return }
+                if value {
+                    guard let firstVC = self.navigationController?.viewControllers.first as? MainTableViewController else { return }
+                    firstVC.changeUserModel(editUserModel)
+                    self.navigationController?.popViewController(animated: true)
+                } else {
+                    self.navigationController?.popViewController(animated: true) // возвращаемся назад
+                }
             }
         }
     }
-    private func authFields() -> Bool {
-        if userModel.firstName != "" ||
-            userModel.secondName != "" ||
-            userModel.birthsday != "" ||
-            userModel.gender != "" ||
-            userModel.gender != "Не указано" {
-            return true
+    
+    private func authFields(model: UserModel) -> Bool {
+        if model.firstName == "Нет данных" ||
+            model.secondName == "Нет данных" ||
+            model.birthsday == "" ||
+            model.gender == "" ||
+            model.gender == "Не указано" {
+            return false
         }
-        return false
+        return true
     }
 }
+
+//MARK: - Set Constraints
 
 extension EditingViewController {
     

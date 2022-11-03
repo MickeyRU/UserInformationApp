@@ -45,9 +45,15 @@ class TextViewTableViewCell: UITableViewCell {
     }
     
     
-    func configure(_ name: String, scrollEnable: Bool) {
+    func configure(_ name: String, scrollEnable: Bool, value: String) {
         nameLabel.text = name
         nameTextView.isScrollEnabled = scrollEnable
+        nameTextView.text = value == "" ? "Нет данных" : value
+        nameTextView.textColor = value == "" ? .lightGray : .black
+    }
+    
+    public func getCellValue() -> String {
+        nameTextView.text
     }
 }
 
