@@ -8,7 +8,6 @@
 import UIKit
 
 extension Date {
-    
     //Получаем из даты строчку
     func getStringFromDate() -> String {
         let dateFormatter = DateFormatter()

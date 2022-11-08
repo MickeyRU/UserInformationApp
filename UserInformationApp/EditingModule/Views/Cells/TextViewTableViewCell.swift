@@ -53,7 +53,7 @@ class TextViewTableViewCell: UITableViewCell {
     }
     
     public func getCellValue() -> String {
-        nameTextView.text
+        nameTextView.text == "Нет данных" ? "" : nameTextView.text
     }
 }
 

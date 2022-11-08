@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let navigationViewController = UINavigationController(rootViewController: MainTableViewController())
+        let navigationViewController = UINavigationController(rootViewController: MainViewController())
         // Убираем прозрачность навигейшен бара 
         if #available(iOS 13.0, *) {
             navigationViewController.navigationBar.scrollEdgeAppearance = navigationViewController.navigationBar.standardAppearance

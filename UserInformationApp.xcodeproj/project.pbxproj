@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE05E49528FC40AC00954FA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05E49428FC40AC00954FA9 /* AppDelegate.swift */; };
-		BE05E49928FC40AC00954FA9 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05E49828FC40AC00954FA9 /* MainTableViewController.swift */; };
+		BE05E49928FC40AC00954FA9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05E49828FC40AC00954FA9 /* MainViewController.swift */; };
 		BE05E49E28FC40AD00954FA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE05E49D28FC40AD00954FA9 /* Assets.xcassets */; };
 		BE05E4A128FC40AD00954FA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE05E49F28FC40AD00954FA9 /* LaunchScreen.storyboard */; };
 		BE05E4AE28FD5F2A00954FA9 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05E4AD28FD5F2A00954FA9 /* Resources.swift */; };
@@ -22,6 +22,7 @@
 		BE5C91BD2912F5EF00829500 /* UITableView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C91BC2912F5EF00829500 /* UITableView + Extension.swift */; };
 		BE5C91BF2913C86D00829500 /* Strings + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C91BE2913C86D00829500 /* Strings + Extensions.swift */; };
 		BE5C91C12913CF3C00829500 /* Date + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C91C02913CF3C00829500 /* Date + Extensions.swift */; };
+		BE5C91C62918EC2300829500 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C91C52918EC2300829500 /* MainTableView.swift */; };
 		BE6890F3290FEEED009F2BDE /* UIBarButtonItem + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6890F2290FEEED009F2BDE /* UIBarButtonItem + Extension.swift */; };
 		BE7887112906AAC70019BFAF /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7887102906AAC70019BFAF /* DatePickerTableViewCell.swift */; };
 		BE7887132906AFCC0019BFAF /* PickerViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7887122906AFCC0019BFAF /* PickerViewTableViewCell.swift */; };
@@ -34,7 +35,7 @@
 /* Begin PBXFileReference section */
 		BE05E49128FC40AC00954FA9 /* UserInformationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserInformationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE05E49428FC40AC00954FA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE05E49828FC40AC00954FA9 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		BE05E49828FC40AC00954FA9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BE05E49D28FC40AD00954FA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE05E4A028FC40AD00954FA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE05E4A228FC40AD00954FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		BE5C91BC2912F5EF00829500 /* UITableView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + Extension.swift"; sourceTree = "<group>"; };
 		BE5C91BE2913C86D00829500 /* Strings + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings + Extensions.swift"; sourceTree = "<group>"; };
 		BE5C91C02913CF3C00829500 /* Date + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extensions.swift"; sourceTree = "<group>"; };
+		BE5C91C52918EC2300829500 /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
 		BE6890F2290FEEED009F2BDE /* UIBarButtonItem + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem + Extension.swift"; sourceTree = "<group>"; };
 		BE7887102906AAC70019BFAF /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTableViewCell.swift; sourceTree = "<group>"; };
 		BE7887122906AFCC0019BFAF /* PickerViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewTableViewCell.swift; sourceTree = "<group>"; };
@@ -130,7 +132,7 @@
 		BE05E4AB28FC440D00954FA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BE05E49828FC40AC00954FA9 /* MainTableViewController.swift */,
+				BE05E49828FC40AC00954FA9 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				BE05E4B028FD660500954FA9 /* MainTableViewCell.swift */,
+				BE5C91C52918EC2300829500 /* MainTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,7 +302,7 @@
 			files = (
 				BE05E4AE28FD5F2A00954FA9 /* Resources.swift in Sources */,
 				BE5C91BD2912F5EF00829500 /* UITableView + Extension.swift in Sources */,
-				BE05E49928FC40AC00954FA9 /* MainTableViewController.swift in Sources */,
+				BE05E49928FC40AC00954FA9 /* MainViewController.swift in Sources */,
 				BE05E4B928FD7B1E00954FA9 /* EditingViewController.swift in Sources */,
 				BE05E4B528FD681900954FA9 /* UIView + extensions.swift in Sources */,
 				BE7887152906B8C90019BFAF /* GenderPickerView.swift in Sources */,
@@ -310,6 +313,7 @@
 				BE078E54290FD8A9009964F1 /* UserModel.swift in Sources */,
 				BE5C91C12913CF3C00829500 /* Date + Extensions.swift in Sources */,
 				BEC2B83D290699F300B6CFBD /* NameTextView.swift in Sources */,
+				BE5C91C62918EC2300829500 /* MainTableView.swift in Sources */,
 				BE6890F3290FEEED009F2BDE /* UIBarButtonItem + Extension.swift in Sources */,
 				BE078E51290FD575009964F1 /* EditingTableView.swift in Sources */,
 				BE5C91BF2913C86D00829500 /* Strings + Extensions.swift in Sources */,
@@ -469,9 +473,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pavelAfanasiev.UserInformationApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -496,9 +503,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pavelAfanasiev.UserInformationApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
